@@ -39,3 +39,8 @@ Die Auswertungen basieren auf öffentlich verfügbaren Statistiken (z. B. Statis
 Das Projekt liefert eine datenbasierte Antwort auf die übergeordnete Forschungsfrage:
 **„Wie hat sich die Zahlungsbereitschaft in Deutschland in den letzten fünf Jahren verändert?“**
 Es kombiniert ökonomische Daten mit Verbraucherumfragen und zeigt, wie sich sowohl die Höhe der Ausgaben als auch die bevorzugten Zahlungsarten verschoben haben.
+
+## Versionen
+
+### Version 1.0.0
+Daten von Statista wurden verwendet, normalisiert und geplottet
