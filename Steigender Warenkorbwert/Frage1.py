@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 
 # ---------- 1) Daten laden ----------
 
@@ -99,6 +100,7 @@ ax1.plot(df["Jahr"], df["LM_Umsatz_real"], marker="o", label="real (inflationsbe
 ax1.set_title("Lebensmitteleinzelhandel – Umsatz nominal vs. real")
 ax1.set_xlabel("Jahr"); ax1.set_ylabel("Mio. €")
 ax1.legend()
+ax1.xaxis.set_major_locator(mticker.MaxNLocator(integer=True))
 fig1.tight_layout()
 fig1.savefig("Bilder\lm_umsatz_nominal_vs_real.png", dpi=300)
 plt.show()
@@ -112,6 +114,7 @@ ax2.plot(df["Jahr"], df["Bekl_real"], marker="o", label="Bekleidung real")
 ax2.set_title("Konsumausgaben – nominal vs. real")
 ax2.set_xlabel("Jahr"); ax2.set_ylabel("Mrd. €/Index-Einheiten")
 ax2.legend()
+ax2.xaxis.set_major_locator(mticker.MaxNLocator(integer=True))
 fig2.tight_layout()
 fig2.savefig("Bilder\konsum_nominal_vs_real.png", dpi=300)
 plt.show()
