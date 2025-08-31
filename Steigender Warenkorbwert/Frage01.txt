@@ -1,10 +1,58 @@
-Wie hat sich die Zahlungsbereitschaft in den letzten fünf Jahren verändert?
-1. Warenkorbwert (2019–2024)
+Veränderung des Warenkorbwerts (2019–2024)
+Entwicklung im stationären Handel (Statista-Daten)
 
-Lebensmitteleinzelhandel: Nominaler Umsatz stark gestiegen (u. a. Pandemie-Effekte, Inflation 2021–2023 sehr hoch).
+Im Lebensmitteleinzelhandel ist der nominale Umsatz in den letzten fünf Jahren deutlich gestiegen. Inflationsbereinigt zeigt sich allerdings ein wesentlich geringerer Zuwachs: +23,3 % nominal gegenüber +17,1 % real.
+Dies bedeutet, dass ein großer Teil des beobachteten Anstiegs auf allgemeine Preissteigerungen (Inflation) zurückzuführen ist, während die realen Konsummengen nur moderat gestiegen sind.
 
-Inflationsbereinigt: Der reale Anstieg ist deutlich schwächer, teilweise stagnierend. Ein Teil des „höheren Warenkorbs“ resultiert also vor allem aus steigenden Preisen, nicht unbedingt aus mehr oder teureren Produkten im Warenkorb.
+Für Konsumausgaben im Bereich Food ergibt sich ein ähnliches Bild: +18,5 % nominal, aber nur +12,5 % real.
+Im Bereich Bekleidung hingegen zeigen die realen Ausgaben einen Rückgang von etwa –10 %, während nominal nur ein leichter Rückgang (–5,2 %) sichtbar ist.
 
-Bekleidung: Konsumausgaben stagnierten oder gingen real sogar zurück, da Haushalte in Krisenzeiten (Pandemie, Inflation) stärker auf Grundnahrungsmittel fokussierten.
+👉 Interpretation: Die Zahlungsbereitschaft für lebensnotwendige Güter wie Lebensmittel ist stabil und steigt leicht, während sie in nicht essenziellen Konsumbereichen (z. B. Bekleidung) zurückgeht.
 
-👉 Interpretation: In den letzten fünf Jahren ist die Zahlungsbereitschaft für essenzielle Güter (Lebensmittel) erhalten geblieben oder leicht gestiegen, während sie bei nicht lebensnotwendigen Konsumbereichen (z. B. Bekleidung) zurückging.
+Ergebnisse der Umfrage
+
+Die Befragungsergebnisse verdeutlichen die subjektive Wahrnehmung der Konsumenten in den letzten fünf Jahren:
+
+66,7 % der Teilnehmenden gaben an, dass ihr Warenkorbwert gestiegen ist (davon 28,2 % „deutlich gestiegen“ und 38,5 % „etwas gestiegen“).
+
+23,1 % berichteten, dass ihr Warenkorb gleich geblieben sei.
+
+Nur 10,3 % nahmen einen Rückgang wahr.
+
+Hinsichtlich der Aspekte, für die man heute eher bereit ist, mehr zu zahlen, ergaben sich folgende Prioritäten:
+
+Höhere Produktqualität / Markenprodukte (74 %)
+
+Lokale oder europäische Anbieter statt Billiganbieter (41 %)
+
+Verbesserter Kundenservice / Rückgabeservice (39 %)
+
+Nachhaltige oder umweltfreundliche Produkte (36 %)
+
+Schnellerer Versand / Expresslieferung (21 %)
+
+Keine erhöhte Zahlungsbereitschaft (5 %)
+
+👉 Interpretation: Konsumenten akzeptieren Preissteigerungen besonders dann, wenn diese mit Qualität, Nachhaltigkeit oder Service verknüpft sind. Reine Preiserhöhungen ohne erkennbaren Mehrwert stoßen hingegen auf geringe Akzeptanz.
+
+Vergleich: Wahrnehmung vs. reale Entwicklung
+
+Wahrnehmung: Zwei Drittel der Befragten nehmen einen steigenden Warenkorbwert wahr.
+
+Reale Entwicklung: Statista-Daten zeigen einen realen Anstieg von +17 % in 5 Jahren im Lebensmittelhandel.
+
+Schlussfolgerung: Sowohl die objektiven Daten als auch die subjektive Wahrnehmung weisen auf einen klaren Anstieg hin. Allerdings überschätzt die Umfrage die tatsächliche reale Steigerung – die Befragten spiegeln stärker die gefühlte Preisentwicklung wider.
+
+Statistischer Test (Binomialtest)
+
+Um die Aussagekraft der Umfrage zu prüfen, wurde ein Binomialtest durchgeführt.
+
+Hypothese H₀: Der Anteil der Personen, die einen Anstieg sehen, liegt bei 50 % (Zufallsmehrheit).
+
+Daten: k = 26 von n = 39 Befragten berichten „gestiegen“.
+
+Ergebnis: p = 0,0266 → auf dem 5 %-Niveau signifikant.
+
+Zusatztest: Gegen die Nullhypothese „nur ein Drittel“ (p = 0,33) ist das Ergebnis sogar hochsignifikant (p ≈ 0,0000).
+
+👉 Interpretation: Es ist statistisch gesichert, dass die Mehrheit der Befragten den Warenkorbwert als gestiegen empfindet. Der Binomialtest wurde gewählt, da er speziell für Anteilsvergleiche geeignet ist und überprüft, ob ein beobachteter Anteil (hier: 26 von 39) signifikant von einer Referenzwahrscheinlichkeit (50 % bzw. 33 %) abweicht.

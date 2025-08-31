@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 from pathlib import Path
+from scipy.stats import binomtest
 
 # -------------------------------------------------------
 # 1) Statista-Zusammenfassung aus CSV (bereits bereinigt)
@@ -10,7 +11,7 @@ from pathlib import Path
 df = pd.read_csv("warenkorb_auswertung.csv")
 df["Jahr"] = pd.to_numeric(df["Jahr"], errors="coerce")
 
-# Auf die letzten 5 Jahre der CSV beschränken
+# Auf die letzten 5 Jahre beschränken
 last_year = int(df["Jahr"].max())
 window = list(range(last_year - 4, last_year + 1))
 df5 = df[df["Jahr"].isin(window)].sort_values("Jahr").reset_index(drop=True)
@@ -48,7 +49,9 @@ def to_index(series):
     base = float(series.iloc[0])
     return series / base * 100.0
 
-fig, ax = plt.subplots()
+Path("Bilder").mkdir(exist_ok=True)
+
+fig, ax = plt.subplots(figsize=(9, 6))
 ax.plot(df5["Jahr"], to_index(df5["LM_Umsatz_nom"]), marker="o", label="nominal")
 ax.plot(df5["Jahr"], to_index(df5["LM_Umsatz_real"]), marker="o",
         label="real (inflationsbereinigt)")
@@ -57,7 +60,6 @@ ax.set_xlabel("Jahr"); ax.set_ylabel("Index (Start = 100)")
 ax.legend()
 ax.xaxis.set_major_locator(mticker.MaxNLocator(integer=True))
 fig.tight_layout()
-Path("Bilder").mkdir(exist_ok=True)
 fig.savefig("Bilder/warenkorb_index_lm_5J.png", dpi=300)
 
 # -------------------------------------------------------
@@ -85,7 +87,6 @@ aspekte = (umf["Aspekte"].fillna("")
            .explode().str.strip())
 aspekte = aspekte[aspekte.ne("")]
 
-# Einheitliche Reihenfolge für klare Story (an eure Grafik angelehnt)
 order_aspekte = [
     "Höhere Produktqualität / Markenprodukte",
     "Verbesserter Kundenservice / Rückgabeservice",
@@ -107,39 +108,47 @@ print(ver.fillna(0))
 print("\n--- Umfrage: Wofür zahlt man eher mehr? ---")
 print(asp.fillna(0))
 
-# Plot 1: Veränderung Warenkorbwert
-fig1, ax1 = plt.subplots()
-ax1.bar(ver["Antwort"], ver["Anzahl"])
-for i, r in ver.iterrows():
-    ax1.text(i, r["Anzahl"] + 0.2, f'{int(r["Anzahl"])} ({r["Anteil_%"]}%)',
-             ha="center", va="bottom")
-ax1.set_title("Umfrage: Veränderung des durchschnittlichen Warenkorbwerts (5 Jahre)")
+# ---------- Plots schön formatiert ----------
+# Plot 1: Veränderung Warenkorbwert (vertikal, feste Reihenfolge)
+ver_sorted = ver.set_index("Antwort").reindex(order_veraenderung).reset_index()
+
+fig1, ax1 = plt.subplots(figsize=(10, 6))
+bars = ax1.bar(ver_sorted["Antwort"], ver_sorted["Anzahl"])
+ax1.set_title("Umfrage: Veränderung des Warenkorbwerts (letzte 5 Jahre)")
 ax1.set_ylabel("Anzahl Personen")
-plt.xticks(rotation=20, ha="right")
+ax1.yaxis.set_major_locator(mticker.MaxNLocator(integer=True))
+plt.xticks(rotation=25, ha="right")
+for rect, cnt, pct in zip(bars, ver_sorted["Anzahl"], ver_sorted["Anteil_%"]):
+    ax1.text(rect.get_x()+rect.get_width()/2, rect.get_height()+0.2,
+             f"{int(cnt)} ({pct}%)", ha="center", va="bottom")
 fig1.tight_layout()
 fig1.savefig("Bilder/umfrage_warenkorb_verteilung.png", dpi=300)
 
-# Plot 2: Aspekte – horizontale Balken
+# Plot 2: Aspekte (horizontal, mit Labels am Balkenende)
 asp_sorted = asp.sort_values("Anzahl")
-fig2, ax2 = plt.subplots()
-ax2.barh(asp_sorted["Aspekt"], asp_sorted["Anzahl"])
-for i, (v, p) in enumerate(zip(asp_sorted["Anzahl"], asp_sorted["Anteil_%"])):
-    ax2.text(v, i, f" {int(v)} ({p}%)", va="center")
+
+fig2, ax2 = plt.subplots(figsize=(11, 6))
+bars = ax2.barh(asp_sorted["Aspekt"], asp_sorted["Anzahl"])
 ax2.set_title("Umfrage: Wofür sind Teilnehmende eher bereit, mehr zu zahlen?")
 ax2.set_xlabel("Anzahl Personen")
 ax2.xaxis.set_major_locator(mticker.MaxNLocator(integer=True))
+for rect, cnt, pct in zip(bars, asp_sorted["Anzahl"], asp_sorted["Anteil_%"]):
+    ax2.text(rect.get_width()+0.2, rect.get_y()+rect.get_height()/2,
+             f"{int(cnt)} ({pct}%)", va="center")
 fig2.tight_layout()
 fig2.savefig("Bilder/umfrage_warenkorb_aspekte.png", dpi=300)
 
 plt.show()
 
 # -------------------------------------------------------
-# 3) „Deskriptiv → Analytisch“: einfache Gegenüberstellung
+# 3) „Deskriptiv → Analytisch“: Gegenüberstellung + Tests
 # -------------------------------------------------------
 # Anteil derer, die einen ANSTIEG empfinden:
-p_empf_anstieg = ver.loc[
+k_gestiegen = int(ver.loc[
     ver["Antwort"].isin(["Deutlich gestiegen", "Etwas gestiegen"]), "Anzahl"
-].sum() / len(umf) * 100
+].sum())
+n = len(umf)
+p_empf_anstieg = k_gestiegen / n * 100
 
 # Reale Entwicklung Lebensmittelhandel (letzte 5 Jahre, %)
 p_real_5j = growth_pct(df5["LM_Umsatz_real"])
@@ -151,7 +160,22 @@ print("Interpretation: Beide Signale deuten auf einen Anstieg; "
       "der reale Zuwachs ist jedoch deutlich kleiner als der nominale, "
       "und die Umfrage spiegelt eher die gefühlte Preis-/Warenkorbdynamik wider.")
 
-# Optional: CSV-Exports (falls du sie dokumentieren willst)
+# Binomialtest H0: p = 0.5 (keine Mehrheit)
+res50 = binomtest(k=k_gestiegen, n=n, p=0.5, alternative="greater")
+print(f"\nBinomialtest H0: p=0.5 (Mehrheit für 'gestiegen'?)  "
+      f"k={k_gestiegen}, n={n}, p-Wert={res50.pvalue:.4f}")
+if res50.pvalue < 0.05:
+    print("→ Signifikant: Mehr als die Hälfte der Befragten nimmt einen Anstieg wahr.")
+else:
+    print("→ Nicht signifikant: Mehrheit statistisch nicht belegt.")
+
+# Optional: strengere/lockerere Referenz, z. B. p0=0.33
+res33 = binomtest(k=k_gestiegen, n=n, p=1/3, alternative="greater")
+print(f"Binomialtest H0: p=0.33  p-Wert={res33.pvalue:.4f}")
+
+# -------------------------------------------------------
+# 4) CSV-Exports
+# -------------------------------------------------------
 out = Path("Ergebnisse"); out.mkdir(exist_ok=True)
 summary.to_csv(out / "statista_warenkorb_5J_summary.csv", index=False)
 ver.to_csv(out / "umfrage_warenkorb_verteilung.csv", index=False)

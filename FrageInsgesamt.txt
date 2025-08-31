@@ -1,7 +1,35 @@
-Wie hat sich die Zahlungsbereitschaft in den letzten fünf Jahren verändert?
+1. Höhe der Ausgaben (Warenkorbwert)
 
-Die Analyse zeigt, dass sich die Zahlungsbereitschaft in Deutschland zwischen 2019 und 2024 in zweifacher Hinsicht verändert hat. Zum einen ist ein deutlicher Anstieg der nominalen Ausgaben zu beobachten, insbesondere im Lebensmitteleinzelhandel. Dieser Anstieg ist jedoch größtenteils preisbedingt und lässt sich auf die hohe Inflation in den Jahren 2021 bis 2023 zurückführen. Inflationsbereinigt zeigt sich, dass die Zahlungsbereitschaft für Grundbedarfsprodukte wie Lebensmittel stabil geblieben oder leicht gestiegen ist, während bei nicht essenziellen Konsumbereichen, beispielsweise Bekleidung, eine Stagnation oder ein Rückgang festzustellen ist.
+Im Lebensmitteleinzelhandel sind die nominalen Umsätze in den letzten fünf Jahren deutlich gestiegen. Inflationsbereinigt beträgt der reale Zuwachs jedoch nur rund +17 %, während die nominale Steigerung bei über +23 % liegt. Damit wird klar, dass ein großer Teil der Entwicklung preisbedingt ist.
 
-Zum anderen hat sich die Art des Bezahlens in kurzer Zeit erheblich gewandelt. Im stationären Handel ist der Bargeldanteil von rund der Hälfte des Umsatzes auf etwa ein Drittel zurückgegangen, während Girocard und Kreditkarten an Bedeutung gewonnen haben. Im Online-Handel zeigt sich ein besonders starker Anstieg von E-Wallets wie PayPal sowie von Kreditkartenzahlungen. Zudem hat sich die Nutzung von Buy Now Pay Later-Angeboten, insbesondere in Form von Rechnungskauf oder Klarna, auf hohem Niveau stabilisiert. Klassische Methoden wie Nachnahme oder Vorkasse verlieren hingegen nahezu vollständig an Relevanz.
+Im Bereich Bekleidung hingegen zeigt sich real sogar ein Rückgang von etwa –10 %, was auf eine abnehmende Zahlungsbereitschaft in nicht essenziellen Konsumbereichen hindeutet.
 
-Insgesamt lässt sich festhalten, dass sich die Zahlungsbereitschaft in den letzten fünf Jahren nicht nur in Bezug auf die Ausgabenhöhe, sondern auch hinsichtlich der bevorzugten Zahlungsarten gewandelt hat. Verbraucher sind bereit, für essenzielle Güter mehr zu zahlen, und akzeptieren zunehmend digitale und flexible Zahlungsmethoden, die Bequemlichkeit und Zahlungsaufschub ermöglichen. Damit wird deutlich, dass sich die Zahlungsbereitschaft sowohl in quantitativer als auch in qualitativer Hinsicht spürbar verändert hat.
+Die Umfrageergebnisse verdeutlichen die subjektive Wahrnehmung der Konsumenten: Rund 66,7 % der Befragten gaben an, dass ihr Warenkorbwert gestiegen sei. Nur etwa 10 % berichteten von einem Rückgang. Die Zahlungsbereitschaft steigt insbesondere dort, wo ein Mehrwert erkennbar ist – für Qualität, Nachhaltigkeit oder Service sind Konsumenten eher bereit, höhere Preise zu akzeptieren.
+
+Ein Binomialtest bestätigte diese Wahrnehmung: Der Anteil der Befragten, die einen Anstieg wahrnehmen, liegt signifikant über 50 % (p = 0,0266). Damit ist statistisch gesichert, dass die Mehrheit der Konsumenten den Warenkorbwert als gestiegen empfindet.
+
+2. Art des Bezahlens (Zahlungsarten)
+
+Im stationären Handel hat der Anteil von Bargeld deutlich abgenommen (von ca. 46 % im Jahr 2019 auf etwa 34 % im Jahr 2024). Gleichzeitig gewannen Girocard und Kreditkarten an Bedeutung. Mobile Payment legte zwar zu, bleibt aber mit einstelligen Anteilen relativ klein.
+
+Im Online-Handel zeigen sich noch stärkere Veränderungen:
+
+E-Wallets (PayPal etc.) stiegen von rund 42 % (2019) auf 65 % (2023) und sind auch in unserer Umfrage mit 82 % klar dominant.
+
+Kreditkarten haben ihren Anteil laut Statista auf über 50 % gesteigert, während unsere Umfrage mit 41 % etwas darunter liegt.
+
+Rechnung/BNPL bleibt mit über 40 % stark, in der Umfrage allerdings geringer ausgeprägt (33 % Rechnung, 15 % BNPL).
+
+Lastschrift wird in unserer Stichprobe stärker genutzt als in den offiziellen Zahlen.
+
+Ein Chi²-Test ergab, dass sich unsere Umfrageergebnisse nicht signifikant von den offiziellen Statista-Daten unterscheiden (χ² = 6,89; df = 6; p = 0,3314). Damit spiegeln die Umfragewerte die allgemeinen Trends zuverlässig wider.
+
+3. Gesamtinterpretation
+
+Die Ergebnisse verdeutlichen, dass sich die Zahlungsbereitschaft in den letzten fünf Jahren sowohl in quantitativer als auch in qualitativer Hinsicht verändert hat:
+
+Quantitativ: Verbraucher geben heute mehr Geld für essenzielle Güter wie Lebensmittel aus, was durch Inflation verstärkt wird. Subjektiv wird der Anstieg des Warenkorbwerts sogar stärker wahrgenommen als er real ausfällt.
+
+Qualitativ: Es vollzieht sich ein klarer Trend hin zu digitalen, schnellen und flexiblen Zahlungsmethoden. Bargeld verliert an Relevanz, während E-Wallets, Kreditkarten und BNPL-Lösungen dominieren.
+
+👉 Zusammenfassend lässt sich festhalten: Die Konsumenten sind bereit, für bestimmte Güter und Mehrwerte (Qualität, Nachhaltigkeit, Service) höhere Preise zu akzeptieren und gleichzeitig neue digitale Zahlungsmethoden anzunehmen. Damit hat sich die Zahlungsbereitschaft in den letzten fünf Jahren spürbar intensiviert und modernisiert.

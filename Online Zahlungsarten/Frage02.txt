@@ -1,7 +1,8 @@
 2. Zahlungsarten (2019–2024)
+
 Stationärer Handel:
 
-Bargeldanteil: von ~46 % (2019) auf ~34 % (2024) gefallen.
+Bargeld: von ~46 % (2019) auf ~34 % (2024) gefallen.
 
 Girocard und Kreditkarten: gewinnen stark an Bedeutung und liegen inzwischen fast gleichauf mit Bargeld.
 
@@ -13,14 +14,22 @@ E-Wallets (PayPal etc.): von ca. 42 % (2019) auf 65 % (2023) gestiegen – auch 
 
 Kreditkarten: laut Statista von ~10 % (2019) auf über 50 % (2023) stark gewachsen, in unserer Umfrage mit 41 % etwas geringer vertreten.
 
-Rechnung/BNPL: stabil stark (über 40 % laut Statista 2023); unsere Umfrage zeigt mit 33 % Rechnung und 15 % BNPL etwas niedrigere Werte.
+Rechnung/BNPL: stabil stark (über 40 % laut Statista 2023); unsere Umfrage zeigt mit 33 % Rechnung und 15 % BNPL niedrigere Werte.
 
 Lastschrift: in unserer Umfrage (33 %) deutlich beliebter als bei Statista (20 %).
 
 Klassische Methoden (Nachnahme, Vorkasse, einfache Überweisung): spielen kaum noch eine Rolle (< 10 %).
 
-Interpretation:
+Statistische Analyse (Chi²-Test):
+Um zu prüfen, ob sich unsere Umfrage-Ergebnisse signifikant von den offiziellen Statista-Daten unterscheiden, wurde ein Chi²-Anpassungstest durchgeführt.
 
+Nullhypothese (H₀): Die Verteilung der Zahlungsarten in unserer Umfrage entspricht den offiziellen Zahlen.
+
+Ergebnis: χ² = 6.89, df = 6, p = 0.3314.
+
+Interpretation: Da p > 0.05, können wir H₀ nicht verwerfen. Es gibt keinen statistisch signifikanten Unterschied – unsere Umfrage spiegelt die offiziellen Trends also im Wesentlichen wider.
+
+Interpretation:
 In den letzten fünf Jahren hat sich die digitale Zahlungsbereitschaft massiv verstärkt. Konsumenten akzeptieren zunehmend schnelle, bequeme und kreditbasierte Lösungen.
 
 PayPal dominiert sowohl offiziell als auch in unserer Umfrage, teils sogar noch stärker.
@@ -28,7 +37,5 @@ PayPal dominiert sowohl offiziell als auch in unserer Umfrage, teils sogar noch 
 Kreditkarte und BNPL wachsen in den Statista-Daten sehr deutlich, erscheinen in unserer Stichprobe etwas schwächer.
 
 Lastschrift bleibt in unserer Umfrage überraschend stark, was auf spezifische Nutzungsmuster im Sample hinweisen könnte.
-
-Chi²-Test zeigt: Trotz dieser Abweichungen unterscheidet sich unsere Umfrage statistisch nicht signifikant von den offiziellen Zahlen – die Muster stimmen also grundsätzlich überein.
 
 👉 Fazit: Die digitale Zahlungsbereitschaft hat sich klar gefestigt. Unterschiede in unserer Umfrage (stärkeres PayPal, schwächeres BNPL/Kreditkarte, stärkeres Lastschrift) sind vermutlich durch die kleine Stichprobe erklärbar und ändern nichts am übergeordneten Trend.
